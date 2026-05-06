@@ -3,92 +3,97 @@
 	<iostream>
 	<cstring>
 
-1776866867 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsfecha.cpp
+1778019274 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsfecha.cpp
 	<iostream>
 	"clsFecha.h"
 
-1776866909 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsfecha.h
+1778019175 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsfecha.h
 
-1776945434 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\main.cpp
+1777559383 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\main.cpp
 	<iostream>
 	"clsPasajeros.h"
 	"clsMenu.h"
 
-1776947719 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clspasajeros.cpp
+1777461805 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clspasajeros.cpp
 	<iostream>
 	<cstring>
 	"clsPasajeros.h"
 	"cargarCadena.h"
 
-1776947726 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clspasajeros.h
+1777414931 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clspasajeros.h
 	"clsFecha.h"
 
 1776867550 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\cargarcadena.h
 
-1776947685 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clscapitan.cpp
+1777462007 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clscapitan.cpp
 	<iostream>
 	<cstring>
 	"clsCapitan.h"
 	"cargarCadena.h"
 
-1776947657 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clscapitan.h
+1777414846 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clscapitan.h
 	"clsFecha.h"
 
-1776947802 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsviajes.cpp
+1777547917 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsviajes.cpp
 	<iostream>
 	"clsViajes.h"
 
-1776947810 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsviajes.h
+1777472413 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsviajes.h
 
-1776955897 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivopasajeros.cpp
+1777416255 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivopasajeros.cpp
 	<iostream>
 	<cstring>
 	"clsArchivoPasajeros.h"
+	"clsArchivoCapitanes.h"
 	"cargarCadena.h"
 
-1776955853 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivopasajeros.h
+1777415633 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivopasajeros.h
 	"clsPasajeros.h"
 
-1776956002 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsmenu.h
+1777465849 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsmenu.h
 	"clsArchivoPasajeros.h"
 	"clsArchivoCapitanes.h"
 	"clsArchivoDestinos.h"
 	"clsArchivoViajes.h"
 	"clsArchivoPasajes.h"
+	"clsReportes.h"
 	<iostream>
 
-1776954059 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsmenu.cpp
+1778022375 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsmenu.cpp
 	"clsMenu.h"
 	<iostream>
 
-1776905721 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivocapitanes.h
+1777415462 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivocapitanes.h
 	"clsCapitan.h"
 
-1776905763 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivocapitanes.cpp
+1777416240 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivocapitanes.cpp
 	<iostream>
 	<cstring>
 	"clsArchivoCapitanes.h"
+	"clsArchivoPasajeros.h"
+	"cargarCadena.h"
 
-1776905511 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivodestinos.h
+1777555656 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivodestinos.h
 	"clsDestinos.h"
 
-1776947761 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsdestinos.h
+1777415040 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsdestinos.h
 
-1776905631 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivodestinos.cpp
+1777555703 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivodestinos.cpp
 	<iostream>
 	<cstring>
 	"clsArchivoDestinos.h"
+	"cargarCadena.h"
 
-1776947789 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsdestinos.cpp
+1777416348 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsdestinos.cpp
 	<iostream>
 	<cstring>
 	"clsDestinos.h"
 	"cargarCadena.h"
 
-1776944560 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivoviajes.h
+1777418686 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivoviajes.h
 	"clsViajes.h"
 
-1776944416 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivoviajes.cpp
+1777548169 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivoviajes.cpp
 	<iostream>
 	<cstring>
 	"clsArchivoViajes.h"
@@ -102,19 +107,33 @@
 
 1776948009 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clspasajerosxviaje.h
 
-1776953898 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivopasajes.h
+1777463755 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivopasajes.h
 	"clsPasajes.h"
 
-1776953348 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clspasajes.h
+1777547702 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clspasajes.h
+	"clsFecha.h"
 
-1776954357 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clspasajes.cpp
+1777547907 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clspasajes.cpp
 	<iostream>
 	"clsPasajes.h"
 
-1776954508 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivopasajes.cpp
+1777548059 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsarchivopasajes.cpp
 	<iostream>
 	<cstring>
 	"clsArchivoViajes.h"
 	"clsArchivoPasajeros.h"
 	"clsArchivoPasajes.h"
+
+1777559983 c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsreportes.h
+
+1777559265 source:c:\users\matub\onedrive\escritorio\mateo\carrera tup\programacion ii\codigo-clase\viajesgalacticos\clsreportes.cpp
+	<iostream>
+	<cstring>
+	"clsArchivoPasajeros.h"
+	"clsArchivoCapitanes.h"
+	"clsArchivoDestinos.h"
+	"clsArchivoViajes.h"
+	"clsArchivoPasajes.h"
+	"clsReportes.h"
+	"cargarCadena.h"
 

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include "clsArchivoDestinos.h"
+#include "cargarCadena.h"
 using namespace std;
 
 ArchivoDestinos::ArchivoDestinos(const char *n){
@@ -77,7 +78,10 @@ void ArchivoDestinos::listarRegistros(){
     int cantReg = contarRegistros();
     for(int i=0; i<cantReg; i++){
         Destinos obj = leerRegistro(i);
-        obj.Mostrar();
+        if(obj.getEstado()){
+            obj.Mostrar();
+            cout << endl;
+        }
     }
 }
 
@@ -102,10 +106,11 @@ void ArchivoDestinos::altaDestino(){
     }
 }
 
-void ArchivoDestinos::buscarPorId(){
-    int id;
-    cout<<"Ingrese el ID de destino a buscar: ";
-    cin>>id;
+void ArchivoDestinos::buscarPorId(int id){
+    if(id == -1){
+        cout<<"Ingrese el ID de destino a buscar: ";
+        cin>>id;
+    }
     ArchivoDestinos arcDes;
     int pos = arcDes.buscarRegistro(id);
     if(pos < 0){
@@ -114,4 +119,68 @@ void ArchivoDestinos::buscarPorId(){
     }
     Destinos obj = arcDes.leerRegistro(pos);
     obj.Mostrar();
+}
+
+void ArchivoDestinos::modificarNombre(){
+
+    int id;
+    cout<<"Ingrese el ID del destino: ";
+    cin>>id;
+    ArchivoDestinos arcDes;
+    int pos = arcDes.buscarRegistro(id);
+    if(pos < 0){
+        cout << "El ID ingresado no existe en el archivo" << endl;
+        return;
+    }
+    Destinos obj;
+    obj = arcDes.leerRegistro(pos);
+    char nomAux[50];
+    cout << "Ingrese el nuevo nombre: ";
+    cargarCadena(nomAux, 50);
+    obj.setNombre(nomAux);
+    arcDes.modificarRegistro(obj, pos);
+}
+
+void ArchivoDestinos::modificarDistancia(){
+
+    int id;
+    cout<<"Ingrese el ID del destino: ";
+    cin>>id;
+    ArchivoDestinos arcDes;
+    int pos = arcDes.buscarRegistro(id);
+    if(pos < 0){
+        cout << "El ID ingresado no existe en el archivo" << endl;
+        return;
+    }
+    Destinos obj;
+    obj = arcDes.leerRegistro(pos);
+    int dAux;
+    cout << "Ingrese la nueva distancia: ";
+    cin >> dAux;
+    obj.setDistancia(dAux);
+    arcDes.modificarRegistro(obj, pos);
+}
+
+void ArchivoDestinos::bajaDestino(){
+    ArchivoDestinos arcDes;
+    cout<<"Ingrese el ID del destino: ";
+    int id;
+    cin>>id;
+    int pos = arcDes.buscarRegistro(id);
+    if(pos < 0){
+        cout<<"El ID ingresado no existe en el archivo"<<endl;
+        return;
+    }
+    Destinos obj;
+    obj = arcDes.leerRegistro(pos);
+    if(obj.getEstado() == false){
+        cout<<"El destino ya se encuentra dado de baja"<<endl;
+        return;
+    }
+    obj.setEstado(false);
+    if(arcDes.modificarRegistro(obj, pos)){
+        cout<<"Baja realizada correctamente"<<endl;
+    }else{
+        cout<<"Error al realizar la baja"<<endl;
+    }
 }

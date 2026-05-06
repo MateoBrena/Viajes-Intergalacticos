@@ -4,16 +4,21 @@
 class Fecha{
     private:
         int dia, mes, anio;
+        bool esBisiesto(int a);
+        bool esValida(int d, int m, int a);
     public:
-        Fecha(int d=1, int m=1, int a=2000);
+        Fecha(int d=1, int m=1, int a=1900);
         int getDia();
         int getMes();
         int getAnio();
-        void setDia(int d);
-        void setMes(int m);
-        void setAnio(int a);
+        bool setDia(int d);
+        bool setMes(int m);
+        bool setAnio(int a);
+        void setHoy();
         void cargarFecha();
         void mostrarFecha();
+        bool operator<(Fecha);
+        bool operator<=(Fecha);
         ~Fecha();
 };
 

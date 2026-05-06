@@ -11,6 +11,7 @@ Capitan::Capitan(int d, const char *n, const char *a, Fecha fN, int r){
     strcpy(apellido, a);
     fechaNacimiento = fN;
     rango = r;
+    estado = true;
 }
 
 void Capitan::setIdInt(int id){
@@ -30,7 +31,15 @@ void Capitan::setFechaNacimiento(Fecha fechaNac){
 }
 
 void Capitan::setRango(int r){
+    if(r <= 0 || r > 3){
+        cout << "Rango ingresado es invalido" << endl;
+        return;
+    }
     rango = r;
+}
+
+void Capitan::setEstado(bool e){
+    estado = e;
 }
 
 int Capitan::getIdInt(){
@@ -53,6 +62,10 @@ int Capitan::getRango(){
     return rango;
 }
 
+bool Capitan::getEstado(){
+    return estado;
+}
+
 void Capitan::Cargar(int id){
     if(id == -1){
         cout << "ID intergalactico: ";
@@ -66,8 +79,14 @@ void Capitan::Cargar(int id){
     cargarCadena(apellido, 50);
     cout << "Fecha de nacimiento: ";
     fechaNacimiento.cargarFecha();
-    cout << "Rango: (1- Novato, 2-Experimentado, 3-Veterano)";
+    cout << "Rango (1- Novato, 2-Experimentado, 3-Veterano): ";
     cin >> rango;
+    while(rango <= 0 || rango > 3){
+        cout << "Nivel de rango invalido. Vuelva a ingresar." << endl;
+        cout << "Nivel de rango (1- Novato, 2-Experimentado, 3-Veterano): ";
+        cin >> rango;
+    }
+
 }
 
 void Capitan::Mostrar(){

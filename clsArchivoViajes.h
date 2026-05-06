@@ -16,6 +16,10 @@ class ArchivoViajes {
         void listarRegistros();
         void altaViaje();
         void buscarPorId();
+        void modificarIdCapitan();
+        void modificarIdDestino();
+        void modificarTiempoViaje();
+        void bajaViaje();
 };
 
 #endif // CLSARCHIVOVIAJES_H_INCLUDED

@@ -28,13 +28,13 @@ void Menu::menuModificarPasajeros(){
                 gestorPasajeros.modificarNombre();
                 break;
             case 2:
-                //gestorPasajeros.buscarPorId();
+                gestorPasajeros.modificarApellido();
                 break;
             case 3:
-                //gestorPasajeros.listarRegistros();
+                gestorPasajeros.modificarFechaNacimiento();
                 break;
             case 4:
-                //gestorPasajeros.modificarRegistro();
+                gestorPasajeros.modificarNivelCiudadania();
                 break;
             case 0:
                 return;
@@ -73,9 +73,46 @@ void Menu::menuPasajeros(){
                 break;
             case 4:
                 menuModificarPasajeros();
-                break;
+                continue;
             case 5:
-                //gestorPasajeros.bajaPasajero();
+                gestorPasajeros.bajaPasajero();
+                break;
+            case 0:
+                return;
+        }
+        system("pause>nul");
+    }
+
+}
+
+void Menu::menuModificarCapitanes(){
+
+    int opc;
+    while(true){
+        system("cls");
+        cout<<"SUBMENU DE MODIFICAR CAPITANES"<<endl;
+        cout<<"====================="<<endl;
+        cout<<"1 - Modificar Nombre"<<endl;
+        cout<<"2 - Modificar Apellido"<<endl;
+        cout<<"3 - Modificar Fecha de nacimiento"<<endl;
+        cout<<"4 - Modificar rango"<<endl;
+        cout<<"0 - Volver al menu de capitan"<<endl;
+        cout<<"====================="<<endl;
+        cout<<"INGRESE UNA OPCION: ";
+        cin>>opc;
+        system("cls");
+        switch(opc){
+            case 1:
+                gestorCapitanes.modificarNombre();
+                break;
+            case 2:
+                gestorCapitanes.modificarApellido();
+                break;
+            case 3:
+                gestorCapitanes.modificarFechaNacimiento();
+                break;
+            case 4:
+                gestorCapitanes.modificarRango();
                 break;
             case 0:
                 return;
@@ -113,10 +150,43 @@ void Menu::menuCapitanes(){
                 gestorCapitanes.listarRegistros();
                 break;
             case 4:
-                //gestorCapitanes.modificarRegistro();
-                break;
+                menuModificarCapitanes();
+                continue;
             case 5:
-                //gestorCapitanes.bajaCapitan();
+                gestorCapitanes.bajaCapitan();
+                break;
+            case 0:
+                return;
+        }
+        system("pause>nul");
+    }
+
+}
+
+void Menu::menuModificarViajes(){
+
+    int opc;
+    while(true){
+        system("cls");
+        cout<<"SUBMENU DE MODIFICAR VIAJES"<<endl;
+        cout<<"====================="<<endl;
+        cout<<"1 - Modificar Capitan"<<endl;
+        cout<<"2 - Modificar Destino"<<endl;
+        cout<<"2 - Modificar tiempo de viaje"<<endl;
+        cout<<"0 - Volver al menu de destinos"<<endl;
+        cout<<"====================="<<endl;
+        cout<<"INGRESE UNA OPCION: ";
+        cin>>opc;
+        system("cls");
+        switch(opc){
+            case 1:
+                gestorViajes.modificarIdCapitan();
+                break;
+            case 2:
+                gestorViajes.modificarIdDestino();
+                break;
+            case 3:
+                gestorViajes.modificarTiempoViaje();
                 break;
             case 0:
                 return;
@@ -154,10 +224,39 @@ void Menu::menuViajes(){
                 gestorViajes.listarRegistros();
                 break;
             case 4:
-                //gestorViajes.modificarRegistro();
-                break;
+                menuModificarViajes();
+                continue;
             case 5:
-                //gestorViajes.bajaViaje();
+                gestorViajes.bajaViaje();
+                break;
+            case 0:
+                return;
+        }
+        system("pause>nul");
+    }
+
+}
+
+void Menu::menuModificarDestinos(){
+
+    int opc;
+    while(true){
+        system("cls");
+        cout<<"SUBMENU DE MODIFICAR DESTINOS"<<endl;
+        cout<<"====================="<<endl;
+        cout<<"1 - Modificar Nombre"<<endl;
+        cout<<"2 - Modificar Distancia"<<endl;
+        cout<<"0 - Volver al menu de destinos"<<endl;
+        cout<<"====================="<<endl;
+        cout<<"INGRESE UNA OPCION: ";
+        cin>>opc;
+        system("cls");
+        switch(opc){
+            case 1:
+                gestorDestinos.modificarNombre();
+                break;
+            case 2:
+                gestorDestinos.modificarDistancia();
                 break;
             case 0:
                 return;
@@ -195,10 +294,10 @@ void Menu::menuDestinos(){
                 gestorDestinos.listarRegistros();
                 break;
             case 4:
-                //gestorDestinos.modificarRegistro();
-                break;
+                menuModificarDestinos();
+                continue;
             case 5:
-                //gestorDestinos.bajaDestino();
+                gestorDestinos.bajaDestino();
                 break;
             case 0:
                 return;
@@ -236,10 +335,51 @@ void Menu::menuPasajes(){
                 gestorPasajes.listarRegistros();
                 break;
             case 4:
-                //gestorPasajes.modificarRegistro();
+                //menuModificarPasajes();
                 break;
             case 5:
-                //gestorPasajes.bajaPasaje();
+                gestorPasajes.bajaPasaje();
+                break;
+            case 0:
+                return;
+        }
+        system("pause>nul");
+    }
+
+}
+
+void Menu::menuReportes(){
+
+    int opc;
+    while(true){
+        system("cls");
+        cout<<"SUBMENU DE REPORTES"<<endl;
+        cout<<"====================="<<endl;
+        cout<<"1 - Cantidad de pasajeros por viaje"<<endl;
+        cout<<"2 - Cantidad de viajes de capitanes veteranos"<<endl;
+        cout<<"3 - Destino mas visitado" << endl;
+        cout<<"4 - Mes con mayor cantidad de pasajes vendidos"<<endl;
+        cout<<"5 - Capitanes con viajes a un planeta"<<endl;
+        cout<<"0 - Volver al menu principal"<<endl;
+        cout<<"====================="<<endl;
+        cout<<"INGRESE UNA OPCION: ";
+        cin>>opc;
+        system("cls");
+        switch(opc){
+            case 1:
+                reportes.cantidadPasajerosXViaje();
+                break;
+            case 2:
+                reportes.cantidadViajesCapVeteranos();
+                break;
+            case 3:
+                reportes.destinoMasVisitado();
+                break;
+            case 4:
+                reportes.mesMasVendido();
+                break;
+            case 5:
+                reportes.capitanesPlanetasxTeclado();
                 break;
             case 0:
                 return;
@@ -270,22 +410,22 @@ void Menu::iniciar(){
         switch(opc){
             case 1:
                 menuPasajeros();
-                break;
+                continue;
             case 2:
                 menuCapitanes();
-                break;
+                continue;
             case 3:
                 menuViajes();
-                break;
+                continue;
             case 4:
                 menuDestinos();
-                break;
+                continue;
             case 5:
                 menuPasajes();
-                break;
+                continue;
             case 6:
-                cout << "Submenu Reportes" << endl;
-                break;
+                menuReportes();
+                continue;
             case 0:
                 return;
         }

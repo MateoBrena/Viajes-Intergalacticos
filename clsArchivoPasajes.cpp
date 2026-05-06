@@ -79,7 +79,10 @@ void ArchivoPasajes::listarRegistros(){
     int cantReg = contarRegistros();
     for(int i=0; i<cantReg; i++){
         Pasajes obj = leerRegistro(i);
-        obj.Mostrar();
+        if(obj.getEstado()){
+            obj.Mostrar();
+            cout << endl;
+        }
     }
 }
 
@@ -89,8 +92,9 @@ void ArchivoPasajes::altaPasaje(){
     cin >> idPas;
     ArchivoPasajeros arcPas;
     int posP = arcPas.buscarRegistro(idPas);
-    if(posP < 0){
-        cout << endl << "Error: No existe pasajero con ese ID" << endl;
+    Pasajero obj2 = arcPas.leerRegistro(posP);
+    if(posP < 0 || obj2.getEstado() == false){
+        cout << endl << "Error: No existe pasajero con ese ID o fue dado de baja" << endl;
         return;
     }
     int idVia;
@@ -98,13 +102,14 @@ void ArchivoPasajes::altaPasaje(){
     cin >> idVia;
     ArchivoViajes arcVia;
     int posV = arcVia.buscarRegistro(idVia);
-    if(posV < 0){
-        cout << endl << "Error: No existe viaje con ese ID" << endl;
+    Viajes obj3 = arcVia.leerRegistro(posV);
+    if(posV < 0 || obj3.getEstado() == false){
+        cout << endl << "Error: No existe viaje con ese ID o fue dado de baja" << endl;
         return;
     }
     ArchivoPasajes arcPasj;
-    int cant = contarRegistros();
-    if(cant <0) cant =0;
+    int cant = arcPasj.contarRegistros();
+    if(cant <0) cant = 0;
     int id = cant + 1;
     Pasajes obj;
     obj.Cargar(id, idPas, idVia);
@@ -125,4 +130,34 @@ void ArchivoPasajes::buscarPorId(){
     }
     Pasajes obj = arcPas.leerRegistro(pos);
     obj.Mostrar();
+}
+
+//void ArchivoPasajes::modificarIdPasajero()
+
+//void ArchivoPasajes::modificarIdViaje()
+
+//void ArchivoPasajes::modificarFechaCompra()
+
+void ArchivoPasajes::bajaPasaje(){
+    ArchivoPasajes arcPas;
+    cout<<"Ingrese el ID del pasaje: ";
+    int id;
+    cin>>id;
+    int pos = arcPas.buscarRegistro(id);
+    if(pos < 0){
+        cout<<"El ID ingresado no existe en el archivo"<<endl;
+        return;
+    }
+    Pasajes obj;
+    obj = arcPas.leerRegistro(pos);
+    if(obj.getEstado() == false){
+        cout<<"El pasaje ya se encuentra dado de baja"<<endl;
+        return;
+    }
+    obj.setEstado(false);
+    if(arcPas.modificarRegistro(obj, pos)){
+        cout<<"Baja realizada correctamente"<<endl;
+    }else{
+        cout<<"Error al realizar la baja"<<endl;
+    }
 }

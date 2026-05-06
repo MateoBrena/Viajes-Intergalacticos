@@ -2,10 +2,37 @@
 #include "clsFecha.h"
 using namespace std;
 
+bool Fecha::esBisiesto(int a){
+    return (a % 4 == 0 && a % 100 != 0) || (a % 400 == 0);
+}
+
+bool Fecha::esValida(int d, int m, int a){
+
+    if (a < 1 || m < 1 || m > 12 || d < 1){
+        return false;
+    }
+
+    int diasPorMes[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    if (m == 2 && esBisiesto(a)){
+        diasPorMes[1] = 29;
+    }
+
+    return d <= diasPorMes[m-1];
+}
+
 Fecha::Fecha(int d, int m, int a){
-    dia = d;
-    mes = m;
-    anio = a;
+
+    if (esValida(d, m, a)){
+        dia = d;
+        mes = m;
+        anio = a;
+    }
+    else{
+        dia = 1;
+        mes = 1;
+        anio = 1900;
+    }
 }
 
 int Fecha::getDia(){
@@ -20,37 +47,81 @@ int Fecha::getAnio(){
     return anio;
 }
 
-void Fecha::setDia(int d){
-    if(d > 0 && d < 32){
+bool Fecha::setDia(int d){
+
+    if (esValida(d, mes, anio)){
         dia = d;
-    }else {
-        dia = dia;
+        return true;
     }
+    return false;
 }
 
-void Fecha::setMes(int m){
-    if(m > 0 && m < 13){
+bool Fecha::setMes(int m){
+
+    if (esValida(dia, m, anio)){
         mes = m;
-    }else{
-        mes = mes;
+        return true;
     }
+    return false;
 }
 
-void Fecha::setAnio(int a){
-    anio = a;
+bool Fecha::setAnio(int a){
+
+    if (esValida(dia, mes, a)){
+        anio = a;
+        return true;
+    }
+    return false;
+}
+
+void Fecha::setHoy(){
+    time_t t = time(NULL);
+    tm * hoy = localtime(&t);
+    dia = hoy->tm_mday;
+    mes = hoy->tm_mon+1;
+    anio = hoy->tm_year+1900;
 }
 
 void Fecha::cargarFecha(){
-    cout << "Dia: ";
-    cin >> dia;
-    cout << "Mes: ";
-    cin >> mes;
-    cout << "Anio: ";
-    cin >> anio;
+    int d, m, a;
+    bool fechaCorrecta = false;
+
+    do{
+        cout << "Ingrese el dia: ";
+        cin >> d;
+        cout << "Ingrese el mes: ";
+        cin >> m;
+        cout << "Ingrese el anio: ";
+        cin >> a;
+
+        if (esValida(d, m, a)){
+            dia = d;
+            mes = m;
+            anio = a;
+            fechaCorrecta = true;
+        }else{
+            cout << "Error: La fecha ingresada no existe. Intente nuevamente.\n" << endl;
+        }
+    }
+    while (!fechaCorrecta);
 }
 
 void Fecha::mostrarFecha(){
     cout << dia << "/" << mes << "/" << anio << endl;
+}
+
+bool Fecha::operator<(Fecha obj){
+    if(anio < obj.anio or (anio == obj.anio and mes < obj.mes) or (anio == obj.anio and mes == obj.mes and dia < obj.dia)){
+        return true;
+    }
+    return false;
+}
+
+bool Fecha::operator<=(Fecha obj){
+    if(anio < obj.anio or (anio == obj.anio and mes < obj.mes) or (anio == obj.anio and mes == obj.mes and dia <= obj.dia)){
+        return true;
+    }
+    return false;
 }
 
 Fecha::~Fecha(){

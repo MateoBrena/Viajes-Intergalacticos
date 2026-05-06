@@ -15,7 +15,10 @@ class ArchivoDestinos {
         int buscarRegistro(int);
         void listarRegistros();
         void altaDestino();
-        void buscarPorId();
+        void buscarPorId(int id=-1);
+        void modificarNombre();
+        void modificarDistancia();
+        void bajaDestino();
 };
 
 #endif // CLSARCHIVODESTINOS_H_INCLUDED

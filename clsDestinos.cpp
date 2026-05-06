@@ -6,7 +6,7 @@
 using namespace std;
 
 Destinos::Destinos(){
-
+    estado = true;
 }
 
 void Destinos::setIdDest(int id){
@@ -18,7 +18,15 @@ void Destinos::setNombre(const char *n){
 }
 
 void Destinos::setDistancia(int d){
+    if(d <= 0){
+        cout << "No se puede ingresar una distancia negativa" << endl;
+        return;
+    }
     distancia = d;
+}
+
+void Destinos::setEstado(bool e){
+    estado = e;
 }
 
 int Destinos::getIdDest(){
@@ -31,6 +39,10 @@ const char * Destinos::getNombre(){
 
 int Destinos::getDistancia(){
     return distancia;
+}
+
+bool Destinos::getEstado(){
+    return estado;
 }
 
 void Destinos::Cargar(int id){

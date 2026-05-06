@@ -16,6 +16,10 @@ class ArchivoPasajes {
         void listarRegistros();
         void altaPasaje();
         void buscarPorId();
+        //void modificarIdPasajero();
+        //void modificarIdViaje();
+        //void modificarFechaCompra();
+        void bajaPasaje();
 };
 
 #endif // CLSARCHIVOPASAJES_H_INCLUDED

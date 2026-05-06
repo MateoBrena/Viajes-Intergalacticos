@@ -17,6 +17,10 @@ class ArchivoPasajeros {
         void altaPasajero();
         void buscarPorId();
         void modificarNombre();
+        void modificarApellido();
+        void modificarFechaNacimiento();
+        void modificarNivelCiudadania();
+        void bajaPasajero();
 };
 
 #endif // CLSARCHIVOPASAJEROS_H_INCLUDED

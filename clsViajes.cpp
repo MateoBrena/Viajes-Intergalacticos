@@ -7,6 +7,7 @@ Viajes::Viajes(int id, int idC, int idD, int tV){
     idCapitan = idC;
     idDestino = idD;
     tiempoViaje = tV;
+    estado = true;
 }
 
 void Viajes::setIdViaje(int id){
@@ -22,7 +23,15 @@ void Viajes::setIdDestino(int idD){
 }
 
 void Viajes::setTiempoViaje(int tV){
+    if(tV <= 0){
+        cout << "Tiempo de viaje ingresado invalido" << endl;
+        return;
+    }
     tiempoViaje = tV;
+}
+
+void Viajes::setEstado(bool e){
+    estado = e;
 }
 
 int Viajes::getIdViaje(){
@@ -41,15 +50,23 @@ int Viajes::getTiempoViaje(){
     return tiempoViaje;
 }
 
+bool Viajes::getEstado(){
+    return estado;
+}
 void Viajes::Cargar(int id, int idC, int idD){
-    if(id == -1){
-        cout << "ID Viaje: ";
-        cin >>idViaje;
+    idViaje = id;
+    if(idC == -1){
+        cout << "ID de capitan: ";
+        cin >>idCapitan;
     }else{
-        idViaje = id;
+        idCapitan = idC;
     }
-    idCapitan = idC;
-    idDestino = idD;
+    if(idD == -1){
+        cout << "ID de destino: ";
+        cin >>idDestino;
+    }else{
+        idDestino = idD;
+    }
     cout << "Ingrese el tiempo de viaje: ";
     cin >> tiempoViaje;
 

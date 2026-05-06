@@ -16,6 +16,11 @@ class ArchivoCapitanes {
         void listarRegistros();
         void altaCapitan();
         void buscarPorId();
+        void modificarNombre();
+        void modificarApellido();
+        void modificarFechaNacimiento();
+        void modificarRango();
+        void bajaCapitan();
 };
 
 #endif // CLSARCHIVOCAPITANES_H_INCLUDED

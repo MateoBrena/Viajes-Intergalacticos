@@ -11,6 +11,7 @@ Pasajero::Pasajero(int d, const char *n, const char *a, Fecha fN, int nC){
     strcpy(apellido, a);
     fechaNacimiento = fN;
     nivelCiudadania = nC;
+    estado = true;
 }
 
 void Pasajero::setIdInt(int id){
@@ -30,7 +31,15 @@ void Pasajero::setFechaNacimiento(Fecha fechaNac){
 }
 
 void Pasajero::setNivCiudadania(int n){
+    if(n <= 0 || n > 3){
+        cout << "Nivel de ciudadania ingresado es invalido" << endl;
+        return;
+    }
     nivelCiudadania = n;
+}
+
+void Pasajero::setEstado(bool e){
+    estado = e;
 }
 
 int Pasajero::getIdInt(){
@@ -53,6 +62,10 @@ int Pasajero::getNivelCiudadania(){
     return nivelCiudadania;
 }
 
+bool Pasajero::getEstado(){
+    return estado;
+}
+
 void Pasajero::Cargar(int id){
     if(id == -1){
         cout << "ID intergalactico: ";
@@ -68,6 +81,11 @@ void Pasajero::Cargar(int id){
     fechaNacimiento.cargarFecha();
     cout << "Nivel de ciudadania (1- Ciudadano, 2- Miembro del consejo, 3-Embajador): ";
     cin >> nivelCiudadania;
+    while(nivelCiudadania <= 0 || nivelCiudadania > 3){
+        cout << "Nivel de ciudadania invalido. Vuelva a ingresar." << endl;
+        cout << "Nivel de ciudadania (1- Ciudadano, 2- Miembro del consejo, 3-Embajador): ";
+        cin >> nivelCiudadania;
+    }
 }
 
 void Pasajero::Mostrar(){

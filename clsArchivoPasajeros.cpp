@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include "clsArchivoPasajeros.h"
+#include "clsArchivoCapitanes.h"
 #include "cargarCadena.h"
 using namespace std;
 
@@ -78,7 +79,10 @@ void ArchivoPasajeros::listarRegistros(){
     int cantReg = contarRegistros();
     for(int i=0; i<cantReg; i++){
         Pasajero obj = leerRegistro(i);
-        obj.Mostrar();
+        if(obj.getEstado()){
+            obj.Mostrar();
+            cout << endl;
+        }
     }
 }
 
@@ -92,9 +96,11 @@ void ArchivoPasajeros::altaPasajero(){
         return;
     }
     ArchivoPasajeros arcPas;
+    ArchivoCapitanes arcCap;
     int pos = arcPas.buscarRegistro(id);
-    if(pos >= 0){
-        cout << endl << "Error: Ya existe pasajero con ese ID" << endl;
+    int pos2 = arcCap.buscarRegistro(id);
+    if(pos >= 0 || pos2 >= 0){
+        cout << endl << "Error: Ya existe persona con ese ID" << endl;
         return;
     }
     obj.Cargar(id);
@@ -125,14 +131,98 @@ void ArchivoPasajeros::modificarNombre(){
     ArchivoPasajeros arcPas;
     int pos = arcPas.buscarRegistro(id);
     if(pos < 0){
-        cout << "El legajo ingresado no existe en el archivo" << endl;
+        cout << "El ID ingresado no existe en el archivo" << endl;
         return;
     }
     Pasajero obj;
     obj = arcPas.leerRegistro(pos);
     char nomAux[50];
-    cout << "Ingresar nuevo nombre: ";
+    cout << "Ingrese el nuevo nombre: ";
     cargarCadena(nomAux, 50);
     obj.setNombre(nomAux);
     arcPas.modificarRegistro(obj, pos);
+}
+
+void ArchivoPasajeros::modificarApellido(){
+
+    int id;
+    cout<<"Ingrese el ID del pasajero: ";
+    cin>>id;
+    ArchivoPasajeros arcPas;
+    int pos = arcPas.buscarRegistro(id);
+    if(pos < 0){
+        cout << "El ID ingresado no existe en el archivo" << endl;
+        return;
+    }
+    Pasajero obj;
+    obj = arcPas.leerRegistro(pos);
+    char apAux[50];
+    cout << "Ingrese el nuevo apellido: ";
+    cargarCadena(apAux, 50);
+    obj.setApellido(apAux);
+    arcPas.modificarRegistro(obj, pos);
+}
+
+void ArchivoPasajeros::modificarFechaNacimiento(){
+
+    int id;
+    cout<<"Ingrese el ID del pasajero: ";
+    cin>>id;
+    ArchivoPasajeros arcPas;
+    int pos = arcPas.buscarRegistro(id);
+    if(pos < 0){
+        cout << "El ID ingresado no existe en el archivo" << endl;
+        return;
+    }
+    Pasajero obj;
+    obj = arcPas.leerRegistro(pos);
+    Fecha faux;
+    cout << "Ingrese la nueva fecha de nacimiento: " << endl;
+    faux.cargarFecha();
+    obj.setFechaNacimiento(faux);
+    arcPas.modificarRegistro(obj, pos);
+}
+
+void ArchivoPasajeros::modificarNivelCiudadania(){
+
+    int id;
+    cout<<"Ingrese el ID del pasajero: ";
+    cin>>id;
+    ArchivoPasajeros arcPas;
+    int pos = arcPas.buscarRegistro(id);
+    if(pos < 0){
+        cout << "El ID ingresado no existe en el archivo" << endl;
+        return;
+    }
+    Pasajero obj;
+    obj = arcPas.leerRegistro(pos);
+    int cAux;
+    cout << "Ingrese el nuevo nivel de ciudadania (1- Ciudadano, 2- Miembro del consejo, 3-Embajador): ";
+    cin >> cAux;
+    obj.setNivCiudadania(cAux);
+    arcPas.modificarRegistro(obj, pos);
+}
+
+void ArchivoPasajeros::bajaPasajero(){
+    ArchivoPasajeros arcPas;
+    cout<<"Ingrese el ID del pasajero: ";
+    int id;
+    cin>>id;
+    int pos = arcPas.buscarRegistro(id);
+    if(pos < 0){
+        cout<<"El ID ingresado no existe en el archivo"<<endl;
+        return;
+    }
+    Pasajero obj;
+    obj = arcPas.leerRegistro(pos);
+    if(obj.getEstado() == false){
+        cout<<"El pasajero ya se encuentra dado de baja"<<endl;
+        return;
+    }
+    obj.setEstado(false);
+    if(arcPas.modificarRegistro(obj, pos)){
+        cout<<"Baja realizada correctamente"<<endl;
+    }else{
+        cout<<"Error al realizar la baja"<<endl;
+    }
 }

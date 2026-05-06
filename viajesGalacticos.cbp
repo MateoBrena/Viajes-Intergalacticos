@@ -40,6 +40,10 @@
 		<Unit filename="clsArchivoDestinos.h" />
 		<Unit filename="clsArchivoPasajeros.cpp" />
 		<Unit filename="clsArchivoPasajeros.h" />
+		<Unit filename="clsArchivoPasajes.cpp" />
+		<Unit filename="clsArchivoPasajes.h" />
+		<Unit filename="clsArchivoViajes.cpp" />
+		<Unit filename="clsArchivoViajes.h" />
 		<Unit filename="clsCapitan.cpp" />
 		<Unit filename="clsCapitan.h" />
 		<Unit filename="clsDestinos.cpp" />
@@ -50,6 +54,10 @@
 		<Unit filename="clsMenu.h" />
 		<Unit filename="clsPasajeros.cpp" />
 		<Unit filename="clsPasajeros.h" />
+		<Unit filename="clsPasajes.cpp" />
+		<Unit filename="clsPasajes.h" />
+		<Unit filename="clsReportes.cpp" />
+		<Unit filename="clsReportes.h" />
 		<Unit filename="clsViajes.cpp" />
 		<Unit filename="clsViajes.h" />
 		<Unit filename="main.cpp" />
